@@ -5,24 +5,124 @@
     "id": "datapackage-dgv",
     "resources": [
         {
-            "name": "table1",
-            "path": "table1/exemple-valide.csv",
+            "name": "classe-adressecommunale",
+            "path": "schema/classe-adressecommunale/exemple-valide.csv",
             "profile": "tabular-data-resource",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
-            "schema": "table1/schema.json",
-            "documentation": "table1/README.md"
+            "schema": "schema/classe-adressecommunale/schema.json",
+            "documentation": "schema/classe-adressecommunale/README.md"
         },
         {
-            "name": "table2",
-            "path": "table2/exemple-valide.csv",
+            "name": "classe-adressecomplementaire",
+            "path": "schema/classe-adressecomplementaire/exemple-valide.csv",
             "profile": "tabular-data-resource",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
-            "schema": "table2/schema.json",
-            "documentation": "table2/README.md"
+            "schema": "schema/classe-adressecomplementaire/schema.json",
+            "documentation": "schema/classe-adressecomplementaire/README.md"
+        },
+		{
+            "name": "classe-adressedetaillee",
+            "path": "schema/classe-adressedetaillee/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-adressedetaillee/schema.json",
+            "documentation": "schema/classe-adressedetaillee/README.md"
+        },
+		{
+            "name": "classe-adressedetailleecomposant",
+            "path": "schema/classe-adressedetailleecomposant/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-adressedetailleecomposant/schema.json",
+            "documentation": "schema/classe-adressedetailleecomposant/README.md"
+        },
+		{
+            "name": "classe-commune",
+            "path": "schema/classe-commune/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-commune/schema.json",
+            "documentation": "schema/classe-commune/README.md"
+        },
+		{
+            "name": "classe-communehistorique",
+            "path": "schema/classe-communehistorique/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-communehistorique/schema.json",
+            "documentation": "schema/classe-communehistorique/README.md"
+        },
+		{
+            "name": "classe-lieuditcomplementaire",
+            "path": "schema/classe-lieuditcomplementaire/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-lieuditcomplementaire/schema.json",
+            "documentation": "schema/classe-lieuditcomplementaire/README.md"
+        },
+		{
+            "name": "classe-nommultilingue",
+            "path": "schema/classe-nommultilingue/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-nommultilingue/schema.json",
+            "documentation": "schema/classe-nommultilingue/README.md"
+        },
+		{
+            "name": "classe-numero",
+            "path": "schema/classe-numero/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-numero/schema.json",
+            "documentation": "schema/classe-numero/README.md"
+        },
+		{
+            "name": "classe-positioncomplementaire",
+            "path": "schema/classe-positioncomplementaire/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-positioncomplementaire/schema.json",
+            "documentation": "schema/classe-positioncomplementaire/README.md"
+        },
+		{
+            "name": "classe-voieplacelieudit",
+            "path": "schema/classe-voieplacelieudit/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-voieplacelieudit/schema.json",
+            "documentation": "schema/classe-voieplacelieudit/README.md"
+        },
+		{
+            "name": "classe-zonepostale",
+            "path": "schema/classe-zonepostale/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-zonepostale/schema.json",
+            "documentation": "schema/classe-zonepostale/README.md"
         }
     ]
 }
