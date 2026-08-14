@@ -80,7 +80,7 @@
     {
       "fields": ["idAdresseCommunale"],
       "reference": {
-        "resource": "adressecommunale",
+        "resource": "classe-adressecommunale",
         "fields": ["idAdresseCommunale"]
       }
     }
