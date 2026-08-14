@@ -137,9 +137,10 @@
       "type": "string",
       "format": "uuid",
       "constraints": {
-        "required": true
+        "required": true,
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
       },
-      "example": "645ecacb-1c00-4492-b578-6c36858386a6"
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
     },
     {
       "name": "idLieuditComplementaire",
@@ -148,9 +149,10 @@
       "type": "string",
       "format": "uuid",
       "constraints": {
-        "required": false
+        "required": false,
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
       },
-      "example": "7a8b9c0d-1234-5678-9abc-def012345678"
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
     },
     {
       "name": "idNumero",
@@ -159,9 +161,10 @@
       "type": "string",
       "format": "uuid",
       "constraints": {
-        "required": false
+        "required": false,
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
       },
-      "example": "1a2b3c4d-5e6f-7890-abcd-ef1234567890"
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
     }
   ],
   "foreignKeys": [

@@ -70,7 +70,8 @@
       "type": "string",
       "format": "uuid",
       "constraints": {
-        "required": true
+        "required": true,
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
       },
       "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
     }

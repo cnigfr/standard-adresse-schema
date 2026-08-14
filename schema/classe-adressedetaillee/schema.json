@@ -27,9 +27,10 @@
       "type": "string",
       "format": "uuid",
       "constraints": {
-        "required": true
+        "required": true,
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
       },
-      "example": "6e7f8a9b-0123-4567-89ab-cdef01234567"
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
     },
     {
       "name": "idAdresseCommunale",
@@ -53,7 +54,7 @@
         "required": false,
 		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
       },
-      "example": "4c5d6e7f-8901-2345-6789-abcdef012345"
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
     }
   ],
   "foreignKeys": [
