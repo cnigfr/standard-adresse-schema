@@ -58,7 +58,7 @@
     {
       "fields": ["idAdresseDetaillee"],
       "reference": {
-        "resource": "adressedetaillee",
+        "resource": "classe-adressedetaillee",
         "fields": ["idAdresseDetaillee"]
       }
     }

@@ -61,14 +61,14 @@
     {
       "fields": ["idAdresseCommunale"],
       "reference": {
-        "resource": "adressecommunale",
+        "resource": "classe-adressecommunale",
         "fields": ["idAdresseCommunale"]
       }
     },
     {
       "fields": ["idAdresseComplementaire"],
       "reference": {
-        "resource": "adressecomplementaire",
+        "resource": "classe-adressecomplementaire",
         "fields": ["idAdresseComplementaire"]
       }
     }
