@@ -171,42 +171,42 @@
     {
       "fields": ["idCommune"],
       "reference": {
-        "resource": "commune",
+        "resource": "classe-commune",
         "fields": ["codeInsee"]
       }
     },
     {
       "fields": ["idCommuneHistorique"],
       "reference": {
-        "resource": "communehistorique",
+        "resource": "classe-communehistorique",
         "fields": ["codeInsee"]
       }
     },
     {
       "fields": ["codePostal"],
       "reference": {
-        "resource": "zonepostale",
+        "resource": "classe-zonepostale",
         "fields": ["codePostal"]
       }
     },
     {
       "fields": ["idVoiePlaceLieudit"],
       "reference": {
-        "resource": "voieplacelieudit",
+        "resource": "classe-voieplacelieudit",
         "fields": ["idOdonyme"]
       }
     },
     {
       "fields": ["idLieuditComplementaire"],
       "reference": {
-        "resource": "lieuditcomplementaire",
+        "resource": "classe-lieuditcomplementaire",
         "fields": ["idOdonyme"]
       }
     },
     {
       "fields": ["idNumero"],
       "reference": {
-        "resource": "numero",
+        "resource": "classe-numero",
         "fields": ["idNumero"]
       }
     }
