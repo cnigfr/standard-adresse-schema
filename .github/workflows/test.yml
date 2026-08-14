@@ -59,8 +59,8 @@ jobs:
         frictionless validate --schema schema/classe-numero/schema.json schema/classe-numero/exemple-valide.csv
     - name: Vérification du schéma classe-positioncomplementaire et des fichiers d'exemples associés
       run: |
-        frictionless validate --type schema schema/classe-positionomplementaire/schema.json
-        frictionless validate --schema schema/classe-positionomplementaire/schema.json schema/classe-positionomplementaire/exemple-valide.csv
+        frictionless validate --type schema schema/classe-positioncomplementaire/schema.json
+        frictionless validate --schema schema/classe-positioncomplementaire/schema.json schema/classe-positioncomplementaire/exemple-valide.csv
     - name: Vérification du schéma classe-voieplacelieudit et des fichiers d'exemples associés
       run: |
         frictionless validate --type schema schema/classe-voieplacelieudit/schema.json
