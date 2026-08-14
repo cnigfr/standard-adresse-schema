@@ -1,0 +1,57 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "commune",
+  "title": "Commune",
+  "description": "Cette classe décrit l’ensemble des informations liées aux communes.",
+  "keywords": ["commune", "INSEE", "COG"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/commune/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/commune/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "codeInsee",
+      "title": "Code INSEE",
+      "description": "Code INSEE de la commune actuelle, sur la base du Code Officiel Géographique en vigueur.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "94067"
+    },
+    {
+      "name": "nom",
+      "title": "Nom de la commune",
+      "description": "Nom de la commune, en minuscules et majuscules accentuées.",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "Saint-Mandé"
+    },
+    {
+      "name": "langue",
+      "title": "Code langue",
+      "description": "Code ISO 639-3 de la langue utilisée pour le nom de la commune.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[a-z]{3}$"
+      },
+      "example": "fra"
+    }
+  ],
+  "primaryKey": ["codeInsee"]
+}

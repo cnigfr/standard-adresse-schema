@@ -1,0 +1,111 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "lieuditcomplementaire",
+  "title": "Lieudit Complémentaire",
+  "description": "Lieudit complémentaire permettant d'associer des adresses à un lieudit historique ou un zonage géographique",
+  "keywords": ["lieudit", "hameau", "zone"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/lieuditcomplementaire/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/lieuditcomplementaire/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "idOdonyme",
+      "title": "Identifiant odonyme",
+      "description": "Il s’agit de l’identifiant unique auquel est rattaché le libellé du lieudit complémentaire décrit par l’enregistrement. Cet identifiant est généré par le système producteur des données et doit être conforme au format UUID v4.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true,
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      },
+      "example": "7a8b9c0d-1234-5678-9abc-def012345678"
+    },
+    {
+      "name": "statut",
+      "title": "Statut",
+      "description": "Cet attribut permet de décrire l’état de l'odonyme.",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "enum": ["envisage", "enVigueur", "perime", "inconnu", "autre"]
+      },
+      "example": "enVigueur"
+    },
+    {
+      "name": "nom",
+      "title": "Nom",
+      "description": "Nom de l'odonyme, en minuscules et majuscules accentuées",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "Kêr Prat hir"
+    },
+    {
+      "name": "langue",
+      "title": "Code langue",
+      "description": "Code ISO 639-3 de la langue utilisée pour le nom de l'odonyme",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[a-z]{3}$"
+      },
+      "example": "fra"
+    },
+    {
+      "name": "dateDebut",
+      "title": "Date de début",
+      "description": "Cet attribut indique la date de début de validité.",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S",
+      "constraints": {
+        "required": false
+      },
+      "example": "2023-11-21T00:05:00"
+    },
+    {
+      "name": "dateFin",
+      "title": "Date de fin",
+      "description": "Cet attribut indique la date de fin de validité.",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S",
+      "constraints": {
+        "required": false
+      },
+      "example": "2023-11-21T00:05:00"
+    },
+    {
+      "name": "idCommune",
+      "title": "Identifiant commune",
+      "description": "Code INSEE de la commune à laquelle appartient cet odonyme.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "22093"
+    }
+  ],
+  "foreignKeys": [
+    {
+      "fields": ["idCommune"],
+      "reference": {
+        "resource": "commune",
+        "fields": ["codeInsee"]
+      }
+    }
+  ],
+  "primaryKey": ["idOdonyme"]
+}

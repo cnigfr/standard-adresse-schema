@@ -1,0 +1,67 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "positioncomplementaire",
+  "title": "Position Complémentaire",
+  "description": "Position(s) géographique(s) complémentaire(s) d'une adresse",
+  "keywords": ["position", "géolocalisation", "coordonnées"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/positioncomplementaire/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/positioncomplementaire/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "position",
+      "title": "Position géographique",
+      "description": "Cet attribut permet de préciser une ou plusieurs position(s) géographique(s) complémentaire(s) d’une adresse associée à un champ type qui permet de caractériser sa nature.",
+      "type": "geopoint",
+      "constraints": {
+        "required": true
+      },
+      "example": "48.845750,2.424550"
+    },
+    {
+      "name": "typePosition",
+      "title": "Type de position",
+      "description": "Cet attribut indique la nature de la position complémentaire",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": ["entreeBatiment", "accesVoie", "parcelle", "batiment", "serviceTechnique", "delivrancePostale", "inconnu", "autre"]
+      },
+      "example": "batiment"
+    },
+	{
+      "name": "typeAdresse",
+      "title": "Type d'adresse",
+      "description": "Cet attribut indique à quel type d'adresse (communale ou complémentaire) se rattache cette position complémentaire",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": ["adresseCommunale", "adresseComplementaire"]
+      },
+      "example": "adresseCommunale"
+    },
+	{
+      "name": "idAdresse",
+      "title": "Identifiant adresse",
+      "description": "Identifiant de l'adresse à laquelle cette position complémentaire est rattachée",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true
+      },
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
+    }
+  ]
+}

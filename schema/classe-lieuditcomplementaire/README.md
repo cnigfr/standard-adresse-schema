@@ -1,0 +1,2 @@
+Adresse mise à disposition par le référentiel national sur le territoire à partir des informations produites par les communes.
+Une adresse communale est composée des éléments : commune, commune historique, zone postale, numéro, indice de répétition et odonyme (voie, place, lieudit et lieudit complémentaire).

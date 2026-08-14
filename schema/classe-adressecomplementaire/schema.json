@@ -1,0 +1,88 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "adressecomplementaire",
+  "title": "Adresse Complémentaire",
+  "description": "Adresse complémentaire intégrant un complément pour des sites non couverts dans le périmètre BAN",
+  "keywords": ["adresse", "bâtiment", "complément"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/adressecomplementaire/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/adressecomplementaire/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "idAdresseComplementaire",
+      "title": "Identifiant adresse complémentaire",
+      "description": "Il s’agit de l’identifiant unique de l’adresse à laquelle est liée cette adresse complémentaire. Cet identifiant est généré par le système producteur des données et doit être conforme au format UUID v4.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": false
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      },
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
+    },
+    {
+      "name": "complementAdresse",
+      "title": "Complément d'adresse",
+      "description": "Cet attribut sert à identifier un bâtiment, une entrée de bâtiment ou un site.",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "bâtiment Copernic"
+    },
+    {
+      "name": "position",
+      "title": "Position géographique",
+      "description": "Cet attribut permet de préciser la position géographique d’une adresse associée à un champ type qui permet de caractériser sa nature.",
+      "type": "geopoint",
+      "constraints": {
+        "required": true
+      },
+      "example": "48.845800,2.424600"
+    },
+    {
+      "name": "typePosition",
+      "title": "Type de position",
+      "description": "Cet attribut indique la nature de la position.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": ["entreeBatiment", "accesVoie", "parcelle", "batiment", "serviceTechnique", "delivrancePostale", "inconnu", "autre"]
+      },
+      "example": "accesVoie"
+    },
+    {
+      "name": "idAdresseCommunale",
+      "title": "Identifiant adresse communale",
+      "description": "Identifiant de l'adresse communale à laquelle cette adresse complémentaire est rattachée.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true
+      },
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
+    }
+  ],
+  "foreignKeys": [
+    {
+      "fields": ["idAdresseCommunale"],
+      "reference": {
+        "resource": "adressecommunale",
+        "fields": ["idAdresseCommunale"]
+      }
+    }
+  ],
+  "primaryKey": ["idAdresseComplementaire"]
+}

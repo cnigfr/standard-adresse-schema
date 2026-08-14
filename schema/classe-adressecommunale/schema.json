@@ -1,0 +1,212 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "adressecommunale",
+  "title": "Adresse Communale",
+  "description": "Adresse mise à disposition par le référentiel national sur le territoire à partir des informations produites par les communes",
+  "keywords": ["adresse", "BAN", "commune"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/adressecommunale/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/adressecommunale/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "idAdresseCommunale",
+      "title": "Identifiant adresse communale",
+      "description": "Il s'agit de l'identifiant unique de l'adresse décrite par l'enregistrement. Cet identifiant est généré par le système producteur des données et doit être conforme au format UUID v4.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true,
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      },
+      "example": "2979a822-9cc7-459f-8d32-d7658e39d6c0"
+    },
+    {
+      "name": "statut",
+      "title": "Statut",
+      "description": "Statut caractérisant le cycle de vie de l'adresse",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "enum": ["envisage", "enVigueur", "perime", "inconnu", "autre"]
+      },
+      "example": "enVigueur"
+    },
+    {
+      "name": "position",
+      "title": "Position géographique",
+      "description": "Cet attribut permet de préciser la position géographique d’un ponctuel d’une adresse, associée à un champ type qui permet de caractériser sa nature.",
+      "type": "geopoint",
+      "constraints": {
+        "required": true
+      },
+      "example": "48.845726,2.424573"
+    },
+    {
+      "name": "typePosition",
+      "title": "Type de position",
+      "description": "Cet attribut indique la nature de la position.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": ["entreeBatiment", "accesVoie", "parcelle", "batiment", "serviceTechnique", "delivrancePostale", "inconnu", "autre"]
+      },
+      "example": "accesVoie"
+    },
+    {
+      "name": "certification",
+      "title": "Certification",
+      "description": "Cet attribut indique si la commune (administration ou élus) a validé l’exactitude des informations de l’adresse décrite.",
+      "type": "integer",
+      "constraints": {
+        "required": true,
+        "enum": [0, 1]
+      },
+      "example": 1
+    },
+    {
+      "name": "dateDebut",
+      "title": "Date de début",
+      "description": "Date de début de validité de l'adresse",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S",
+      "constraints": {
+        "required": false
+      },
+      "example": "2023-11-21T00:05:00"
+    },
+    {
+      "name": "dateFin",
+      "title": "Date de fin",
+      "description": "Date de fin de validité de l'adresse",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S",
+      "constraints": {
+        "required": false
+      },
+      "example": "2023-11-21T00:05:00"
+    },
+    {
+      "name": "idCommune",
+      "title": "Identifiant commune",
+      "description": "Code INSEE de la commune actuelle à laquelle cette adresse communale est rattachée.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "94067"
+    },
+    {
+      "name": "idCommuneHistorique",
+      "title": "Identifiant commune historique",
+      "description": "Code INSEE de la commune historique à laquelle cette adresse communale est rattachée.",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "14371"
+    },
+    {
+      "name": "codePostal",
+      "title": "Code postal",
+      "description": "Code postal de la zone postale à laquelle cette adresse communale est rattachée.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "94160"
+    },
+    {
+      "name": "idVoiePlaceLieudit",
+      "title": "Identifiant voie, place, ou lieudit",
+      "description": "Identifiant de l'objet VoiePlaceLieudit auquel cette adresse communale est rattachée.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true
+      },
+      "example": "645ecacb-1c00-4492-b578-6c36858386a6"
+    },
+    {
+      "name": "idLieuditComplementaire",
+      "title": "Identifiant lieudit complémentaire",
+      "description": "Identifiant du lieudit complémentaire auquel cette adresse communale est rattachée.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": false
+      },
+      "example": "7a8b9c0d-1234-5678-9abc-def012345678"
+    },
+    {
+      "name": "idNumero",
+      "title": "Identifiant numéro",
+      "description": "Identifiant du numéro auquel cette adresse communale est rattachée.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": false
+      },
+      "example": "1a2b3c4d-5e6f-7890-abcd-ef1234567890"
+    }
+  ],
+  "foreignKeys": [
+    {
+      "fields": ["idCommune"],
+      "reference": {
+        "resource": "commune",
+        "fields": ["codeInsee"]
+      }
+    },
+    {
+      "fields": ["idCommuneHistorique"],
+      "reference": {
+        "resource": "communehistorique",
+        "fields": ["codeInsee"]
+      }
+    },
+    {
+      "fields": ["codePostal"],
+      "reference": {
+        "resource": "zonepostale",
+        "fields": ["codePostal"]
+      }
+    },
+    {
+      "fields": ["idVoiePlaceLieudit"],
+      "reference": {
+        "resource": "voieplacelieudit",
+        "fields": ["idOdonyme"]
+      }
+    },
+    {
+      "fields": ["idLieuditComplementaire"],
+      "reference": {
+        "resource": "lieuditcomplementaire",
+        "fields": ["idOdonyme"]
+      }
+    },
+    {
+      "fields": ["idNumero"],
+      "reference": {
+        "resource": "numero",
+        "fields": ["idNumero"]
+      }
+    }
+  ],
+  "primaryKey": ["idAdresseCommunale"]
+}

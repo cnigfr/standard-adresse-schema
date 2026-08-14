@@ -1,0 +1,110 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "voieplacelieudit",
+  "title": "Voie Place Lieudit",
+  "description": "Libellé principal de l'adresse, décrit le nom de la voie (ou place ou lieudit)",
+  "keywords": ["voie", "odonyme", "rue"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/voieplacelieudit/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/voieplacelieudit/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "idOdonyme",
+      "title": "Identifiant odonyme",
+      "description": "Il s’agit de l’identifiant unique auquel est rattaché le libellé de la voie (ou place ou lieudit) décrit par l’enregistrement. Cet identifiant est généré par le système producteur des données et doit être conforme au format UUID v4.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true
+      },
+      "example": "645ecacb-1c00-4492-b578-6c36858386a6"
+    },
+    {
+      "name": "statut",
+      "title": "Statut",
+      "description": "Cet attribut permet de décrire l’état de l’odonyme.",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "enum": ["envisage", "enVigueur", "perime", "inconnu", "autre"]
+      },
+      "example": "enVigueur"
+    },
+    {
+      "name": "nom",
+      "title": "Nom",
+      "description": "Nom de l'odonyme, en minuscules et majuscules accentuées",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "Allée Fontaine de Crouts"
+    },
+    {
+      "name": "langue",
+      "title": "Code langue",
+      "description": "Code ISO 639-3 de la langue utilisée pour le nom de l'odonyme",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[a-z]{3}$"
+      },
+      "example": "fra"
+    },
+    {
+      "name": "dateDebut",
+      "title": "Date de début",
+      "description": "Date de début de validité de l'odonyme",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S",
+      "constraints": {
+        "required": false
+      },
+      "example": "2023-11-21T00:05:00"
+    },
+    {
+      "name": "dateFin",
+      "title": "Date de fin",
+      "description": "Date de fin de validité de l'odonyme",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S",
+      "constraints": {
+        "required": false
+      },
+      "example": "2023-11-21T00:05:00"
+    },
+    {
+      "name": "idCommune",
+      "title": "Identifiant commune",
+      "description": "Code INSEE de la commune à laquelle appartient cet odonyme",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "94067"
+    }
+  ],
+  "foreignKeys": [
+    {
+      "fields": ["idCommune"],
+      "reference": {
+        "resource": "commune",
+        "fields": ["codeInsee"]
+      }
+    }
+  ],
+  "primaryKey": ["idOdonyme"]
+}

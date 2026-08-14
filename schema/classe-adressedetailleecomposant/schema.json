@@ -1,0 +1,66 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "adressedetailleecomposant",
+  "title": "Composants Adresse Détaillée",
+  "description": "Composants de localisation détaillée (escalier, niveau, local) pour une adresse détaillée",
+  "keywords": ["adresse", "escalier", "niveau", "local"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/adressedetailleecomposant/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/adressedetailleecomposant/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "typeComposant",
+      "title": "Type de composant",
+      "description": "Type de composant (escalier, niveau ou local)",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": ["escalier", "niveau", "local"]
+      },
+      "example": "local"
+    },
+    {
+      "name": "valeur",
+      "title": "Valeur",
+      "description": "Cet attribut permet de distinguer les composants",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "Appartement 224"
+    },
+	{
+      "name": "idAdresseDetaillee",
+      "title": "Identifiant adresse détaillée",
+      "description": "Identifiant de l'adresse détaillée à laquelle ce composant est rattaché",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true,
+		"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      },
+      "example": "6e7f8a9b-0123-4567-89ab-cdef01234567"
+    }
+  ],
+  "foreignKeys": [
+    {
+      "fields": ["idAdresseDetaillee"],
+      "reference": {
+        "resource": "adressedetaillee",
+        "fields": ["idAdresseDetaillee"]
+      }
+    }
+  ]
+}

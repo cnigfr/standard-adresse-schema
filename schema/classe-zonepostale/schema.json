@@ -1,0 +1,36 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "zonepostale",
+  "title": "Zone Postale",
+  "description": "Informations liées à la zone postale",
+  "keywords": ["code postal", "La Poste", "distribution"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/zonepostale/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/zonepostale/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "codePostal",
+      "title": "Code postal",
+      "description": "Code postal du bureau distributeur de courrier. Sur 5 caractères.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "75011"
+    }
+  ],
+  "primaryKey": ["codePostal"]
+}

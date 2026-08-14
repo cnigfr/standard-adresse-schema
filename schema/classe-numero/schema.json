@@ -1,0 +1,78 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "numero",
+  "title": "Numéro",
+  "description": "Numéro d'adresse dans la voie",
+  "keywords": ["numéro", "adresse", "numérotation"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/numero/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/numero/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+      {
+      "name": "idNumero",
+      "title": "Identifiant numéro",
+      "description": "Il s’agit de l’identifiant unique du numéro décrit par l’enregistrement. Cet identifiant est généré par le système producteur des données et doit être conforme au format UUID v4.",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true
+      },
+      "example": "645ecacb-1c00-4492-b578-6c36858386a6"
+    },
+    {
+      "name": "numero",
+      "title": "Numéro",
+      "description": "Le numéro d'adresse dans la voie",
+      "type": "integer",
+      "constraints": {
+        "required": true,
+        "minimum": 1
+      },
+      "example": 12
+    },
+    {
+      "name": "indiceRepetition",
+      "title": "Indice de répétition",
+      "description": "Cet attribut sert à distinguer plusieurs adresses partageant le même numéro (bis, ter, A, B…)",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "maxLength": 10
+      },
+      "example": "bis"
+    },
+    {
+      "name": "idOdonyme",
+      "title": "Identifiant odonyme",
+      "description": "Identifiant de la voie à laquelle ce numéro est associé",
+      "type": "string",
+      "format": "uuid",
+      "constraints": {
+        "required": true
+      },
+      "example": "645ecacb-1c00-4492-b578-6c36858386a6"
+    }
+  ],
+  "foreignKeys": [
+    {
+      "fields": ["idOdonyme"],
+      "reference": {
+        "resource": "voieplacelieudit",
+        "fields": ["idOdonyme"]
+      }
+    }
+  ],
+  "primaryKey": ["idNumero"]
+}

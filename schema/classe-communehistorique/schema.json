@@ -1,0 +1,77 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "communehistorique",
+  "title": "Commune Historique",
+  "description": "Ensemble des informations liées aux communes historiques",
+  "keywords": ["commune", "historique", "fusion"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/communehistorique/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/communehistorique/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "codeInsee",
+      "title": "Code INSEE",
+      "description": "Code INSEE de la commune historique sur 5 caractères, sur la base du Code Officiel Géographique en vigueur.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "14371"
+    },
+    {
+      "name": "nom",
+      "title": "Nom de la commune historique",
+      "description": "Nom de la commune historique, en minuscules et majuscules accentuées",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "Livarot"
+    },
+    {
+      "name": "langue",
+      "title": "Code langue",
+      "description": "Code ISO 639-3 de la langue utilisée pour le nom de la commune historique.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[a-z]{3}$"
+      },
+      "example": "fra"
+    },
+    {
+      "name": "idCommuneActuelle",
+      "title": "Commune actuelle",
+      "description": "Code INSEE de la commune actuelle dans laquelle est comprise cette commune historique",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}$"
+      },
+      "example": "14371"
+    }
+  ],
+  "foreignKeys": [
+    {
+      "fields": ["idCommuneActuelle"],
+      "reference": {
+        "resource": "commune",
+        "fields": ["codeInsee"]
+      }
+    }
+  ],
+  "primaryKey": ["codeInsee"]
+}

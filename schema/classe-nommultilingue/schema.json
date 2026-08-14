@@ -1,0 +1,66 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "nommultilingue",
+  "title": "Nom Multilingue",
+  "description": "Traductions des noms dans des langues alternatives (langues régionales)",
+  "keywords": ["multilingue", "langue régionale", "traduction"],
+  "countryCode": "FR",
+  "homepage": "https://github.com/cnigfr/schema-adresse",
+  "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/nommultilingue/schema.json",
+  "resources": [{
+    "title": "Fichier valide",
+    "path": "https://github.com/cnigfr/schema-adresse/raw/main/schema/nommultilingue/exemple-valide.csv"
+  }],
+  "created": "2026-08-07",
+  "version": "v1.0.0",
+  "contributors": [{
+    "title": "Membres du GT Adresses du CNIG",
+    "email": "cnig@cnig.fr",
+    "organisation": "CNIG",
+    "role": "author"
+  }],
+  "fields": [
+    {
+      "name": "nom",
+      "title": "Nom",
+      "description": "Traduction du nom de l'entité dans une langue alternative.",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "Croutseko Iturriaren hiribidea"
+    },
+    {
+      "name": "langue",
+      "title": "Code langue",
+      "description": "Code ISO 639-3 de la langue utilisée pour le nom multilingue",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "pattern": "^[a-z]{3}$"
+      },
+      "example": "eus"
+    },
+	{
+      "name": "typeEntite",
+      "title": "Type d'entité",
+      "description": "Type d'entité concernée par le nom multilingue",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": ["commune", "communehistorique", "voieplacelieudit", "lieuditcomplementaire"]
+      },
+      "example": "commune"
+    },
+    {
+      "name": "idEntite",
+      "title": "Identifiant entité",
+      "description": "Identifiant de l'entité concernée (code INSEE pour communes, UUID pour odonymes)",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "69123"
+    }
+  ]
+}
