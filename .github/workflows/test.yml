@@ -21,14 +21,54 @@ jobs:
           ${{ runner.os }}-
     - name: Installation des dépendances
       run: pip install -r requirements.txt
-    - name: Vérification du schéma table1 et des fichiers d'exemples associés
+    - name: Vérification du schéma classe-adressecommunale et des fichiers d'exemples associés
       run: |
-        frictionless validate --type schema table1/schema.json
-        frictionless validate --schema table1/schema.json table1/exemple-valide.csv
-    - name: Vérification du schéma table2 et des fichiers d'exemples associés
+        frictionless validate --type schema schema/classe-adressecommunale/schema.json
+        frictionless validate --schema schema/classe-adressecommunale/schema.json schema/classe-adressecommunale/exemple-valide.csv
+    - name: Vérification du schéma classe-adressecomplementaire et des fichiers d'exemples associés
       run: |
-        frictionless validate --type schema table2/schema.json
-        frictionless validate --schema table2/schema.json table2/exemple-valide.csv
+        frictionless validate --type schema schema/classe-adressecomplementaire/schema.json
+        frictionless validate --schema schema/classe-adressecomplementaire/schema.json schema/classe-adressecomplementaire/exemple-valide.csv
+    - name: Vérification du schéma classe-adressedetaillee et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-adressedetaillee/schema.json
+        frictionless validate --schema schema/classe-adressedetaillee/schema.json schema/classe-adressedetaillee/exemple-valide.csv
+    - name: Vérification du schéma classe-adressedetailleecomposant et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-adressedetailleecomposant/schema.json
+        frictionless validate --schema schema/classe-adressedetailleecomposant/schema.json schema/classe-adressedetailleecomposant/exemple-valide.csv
+    - name: Vérification du schéma classe-commune et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-commune/schema.json
+        frictionless validate --schema schema/classe-commune/schema.json schema/classe-commune/exemple-valide.csv
+    - name: Vérification du schéma classe-communehistorique et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-communehistorique/schema.json
+        frictionless validate --schema schema/classe-communehistorique/schema.json schema/classe-communehistorique/exemple-valide.csv
+    - name: Vérification du schéma classe-lieuditcomplementaire et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-lieuditcomplementaire/schema.json
+        frictionless validate --schema schema/classe-lieuditcomplementaire/schema.json schema/classe-lieuditcomplementaire/exemple-valide.csv
+    - name: Vérification du schéma classe-nommultilingue et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-nommultilingue/schema.json
+        frictionless validate --schema schema/classe-nommultilingue/schema.json schema/classe-nommultilingue/exemple-valide.csv
+    - name: Vérification du schéma classe-numero et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-numero/schema.json
+        frictionless validate --schema schema/classe-numero/schema.json schema/classe-numero/exemple-valide.csv
+    - name: Vérification du schéma classe-positioncomplementaire et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-positionomplementaire/schema.json
+        frictionless validate --schema schema/classe-positionomplementaire/schema.json schema/classe-positionomplementaire/exemple-valide.csv
+    - name: Vérification du schéma classe-voieplacelieudit et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-voieplacelieudit/schema.json
+        frictionless validate --schema schema/classe-voieplacelieudit/schema.json schema/classe-voieplacelieudit/exemple-valide.csv
+    - name: Vérification du schéma classe-zonepostale et des fichiers d'exemples associés
+      run: |
+        frictionless validate --type schema schema/classe-zonepostale/schema.json
+        frictionless validate --schema schema/classe-zonepostale/schema.json schema/classe-zonepostale/exemple-valide.csv
     - name: Vérification du datapackage
       run: |
         frictionless validate datapackage.json
