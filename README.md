@@ -1,35 +1,24 @@
-# Template de départ pour Data Package
+# Standard Adresse
 
-Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un schéma [Data Package](https://specs.frictionlessdata.io/data-package/).
+## Description
 
-## Utiliser ce template
-
-- Si vous créez votre dépôt sur GitHub, il vous suffit d'appuyer sur le bouton vert "Use this template". Consultez [la documentation](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) pour plus d'infos ;
-- Si votre projet sera hébergé ailleurs (par exemple Gitlab), vous pouvez cloner ce répertoire ou télécharger les fichiers correspondants. Utilisez le bouton "Clone or download".
-
-## Fichiers disponibles
-
-Ce dépôt contient un ensemble de fichiers utiles pour un dépôt d'un schéma [Data Package](https://specs.frictionlessdata.io/data-package/).
-
-- [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions de votre schéma ;
-- [`LICENSE.md`](LICENSE.md) est le fichier de licence du dépôt. Nous recommandons d'utiliser la [Licence Ouverte](https://www.etalab.gouv.fr/licence-ouverte-open-licence), cette licence est recommandée par l'administration française pour le partage de données et de documents ;
-- [`README.md`](README.md) est le fichier que vous lisez actuellement. À terme, il devra présenter votre schéma ;
-- [`requirements.txt`](requirements.txt) liste les dépendances Python nécessaires pour effectuer des tests en intégration continue sur votre dépôt ;
-- [`datapackage.json`](datapackage.json) est le schéma au format Data Package qui fait référence à deux tables contenues dans les dossiers `table1` et `table2`.
-
-### Intégration continue
-
-Ce dépôt est configuré pour utiliser de l'intégration continue, si vous utilisez GitHub. À chaque commit, une suite de tests sera lancée via [GitHub Actions](https://github.com/features/actions) afin de vérifier :
-
-- que votre schéma est valide à la spécification Data Package ;
-- que vos fichiers d'exemples sont conformes au schéma.
-
-Si vous n'utilisez pas GitHub, vous pouvez lancer ces tests sur votre machine ou sur un autre service d'intégration continue comme Gitlab CI, Jenkins, Circle CI, Travis etc. Consultez la configuration utilisée dans [`.github/workflows/test.yml`](.github/workflows/test.yml).
+L’objectif de ce document est la définition des concepts d’adresses et des composantes d’adressage 
+en France, en cohérence avec les spécifications Adresse de la directive INSPIRE et la norme 
+internationale ISO 19160 concernant l’adressage. 
+Il fournit les définitions des concepts adresses et des composantes d’adressage, cela comprend :  
+− Le périmètre BAN actuellement défini sur la compétence communale 
+− Les composantes adresses nécessaires à une utilisation d’adresses plus détaillées (ex : 
+bâtiments sur site privé ou intérieur des bâtiments notamment) 
+Ce standard comporte un modèle de données partagé pour encourager l’interopérabilité et 
+l’utilisabilité des données Adresse en France. L’enjeu principal du standard est ainsi de faciliter 
+l’articulation du référentiel BAN avec les autres référentiels (voies, bâtiments, locaux) et systèmes 
+d’informations métiers.  
+Le document comprend également en annexes des descriptions de cas d’usage. 
+Ce standard se place dans un contexte de l’adresse encore en évolution, notamment celles prévues 
+dans la feuille de route BAN, les travaux en cours du RIAL (référentiel inter administratif des locaux, 
+du GT bâti (futur RNB – Référentiel national des bâtiments) et du GT Routes. 
+Ce document contient des illustrations et des cas d’usages (description de l’utilisation des données 
+d’adresse et le modèle conceptuel associé) et présente les liens courants avec d’autres vues métier 
+(gestionnaire réseau, distribution postale etc).  
 
 
-## Documentation
-
-Pour vous aider dans la construction de votre dépôt, nous vous recommandons de vous référer à :
-
-- [Le guide à destination des producteurs de schéma](https://guides.data.gouv.fr/guides-open-data/guide-qualite)
-- [La documentation de schema.data.gouv.fr](https://schema.data.gouv.fr)
