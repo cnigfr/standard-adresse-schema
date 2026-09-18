@@ -49,7 +49,7 @@ notamment :
 de valeurs issues du LocatorDesignatorType a été utilisée pour la liste des positions de la 
 spécification BAL.  
 
-− ISO 19160-1 :2015 : Adressage — Partie 1 : Modèle conceptuel 
+− ISO 19160-1 (2015) : Adressage — Partie 1 : Modèle conceptuel 
 
 − ISO/DIS 19160-2 : Adressage — Partie 2 : Attribution et gestion d’adresses pour des objets 
 dans le monde physique. 
