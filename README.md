@@ -14,9 +14,9 @@ Il fournit les définitions des concepts adresses et des composantes d’adressa
 bâtiments sur site privé ou intérieur des bâtiments notamment) 
 
 Ce standard comporte un modèle de données partagé pour encourager l’interopérabilité et 
-l’utilisabilité des données Adresse en France. L’enjeu principal du standard est ainsi de faciliter 
+l’utilisabilité des données Adresse en France. **L’enjeu principal du standard est ainsi de faciliter 
 l’articulation du référentiel BAN avec les autres référentiels (voies, bâtiments, locaux) et systèmes 
-d’informations métiers.  
+d’informations métiers**.  
 
 Le document comprend également en annexes des descriptions de cas d’usage. 
 Ce standard se place dans un contexte de l’adresse encore en évolution, notamment celles prévues 
@@ -61,3 +61,10 @@ postales internationales
 n°1089/2010 portant modalités d'application de la directive 2007/2/CE du Parlement 
 européen et du Conseil en ce qui concerne l'interopérabilité des séries et des services de 
 données géographique. 
+
+## Versions
+
+La première version du standard est celle en vigueur, elle a été validée le 28 octobre 2024. 
+
+Elle est accessible via ce répertoire ou via la [page correspondante du site du CNIG](https://cnig.gouv.fr/ressources-adresse-a26286.html)
+
